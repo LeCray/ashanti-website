@@ -1,0 +1,91 @@
+.contactLeftCol {
+	position: absolute;
+	z-index: 60;
+	top: 0px;
+	left: 0px;
+	height: 100vh;
+	width: 50%;
+	background: linear-gradient(to top right, #0000ff 0%, #66ccff 100%);	
+}
+
+.contactWhite {
+	letter-spacing: 2px;
+	text-align: center;
+	color: #fff;
+	padding-top: 25%;
+	font-weight: bold;
+}
+.contactHr {
+	border-color: #fff;	
+	width: 50%;
+}
+
+
+.contactLink {
+	margin-left: 20px;
+	display: inline-block;
+	cursor: pointer;
+}
+.contactLinkHover {
+	margin-left: 20px;
+	display: inline-block;
+	cursor: pointer;		
+	border-bottom: 3px solid white;
+}
+.contactLinks {		
+	position: absolute;
+	left: 50%;
+	bottom: 70px;
+	width: 100%;		
+	text-align: center;
+}
+.contact-link-content {
+	position: relative;
+	left: -50%;	
+}
+.contactLinksCorrection {		
+	position: absolute;
+	left: 50%;
+	bottom: 67px;
+	width: 100%;		
+	text-align: center;
+}
+.contact-intra-links {	
+	display: inline-block;	
+	
+}
+.contactRightCol {
+	margin-left: 50%;
+	height: 100vh;
+	width: 50%;
+	font-size: 20px;
+}
+.contactRightColContent {
+	height: 100%;
+	padding: 50px 100px 100px 100px;
+	color: black;
+	overflow-y: scroll;	
+
+}
+.contact-details-container {
+	width: 100%;
+	border: 1px solid red
+}
+.contact-details {
+	
+	
+}
+.contact-details-2 {
+	
+}
+
+.me-contact {
+	height: 220px;
+	margin-top: 50px;
+}
+.name-contact {			
+	font-weight: bold;	
+}
+.contact-heading {
+	font-weight: bold;
+}
