@@ -34,9 +34,9 @@ export default class Landing extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            loading: true,   
+            loading: false,   
             landingHome: false,
-            about: false,
+            about: true,
             work: false,
             contact: false,
             mobile: false,
@@ -195,7 +195,7 @@ export default class Landing extends Component {
                                 <img ref={rocket} className="rocket" src={require("../../Assets/Images/thunder.svg")}/><br/>
                                 
                                 <div className="name-container">
-                                    <h1 ref={Fname} className="name">Jabulani</h1>
+                                    <h1 ref={Fname} className="name">Ashanti</h1>
                                     <h1 ref={Lname} className="name" style={{marginLeft: 5}}>Kunene</h1>
                                 </div>
 
@@ -203,8 +203,9 @@ export default class Landing extends Component {
                                     <div ref={summary} className="summary">
                                         <div className="summary-details">
                                             <hr ref={hr} className="hr"/>
-                                            <h6 style={{fontWeight: "bold"}}>Full Stack Developer</h6>                                        
-                                            <h6 style={{fontWeight: "bold"}}>Web | Android | iOS</h6>
+                                            <h6 style={{fontWeight: "bold"}}>Speaker</h6>                                        
+                                            <h6 style={{fontWeight: "bold"}}>Writer</h6>
+                                            <h6 style={{fontWeight: "bold"}}>Activist</h6>
                                         </div>
                                     </div>
 
@@ -238,7 +239,7 @@ export default class Landing extends Component {
 
                             </Col>                            
                             <div ref={whiteBox} className="whiteBox">                                
-                                <img ref={me} className="me" src={require("../../Assets/Images/me3.jpg")}/>
+                                <img ref={me} className="me" src={require("../../Assets/Images/Shanti - Grad Photo.jpg")}/>
                             </div>
                         </Row>                                                        
                     </div>

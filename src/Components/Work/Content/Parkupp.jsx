@@ -32,7 +32,7 @@ export class Parkupp extends Component {
             <h4>A decentralised parking application</h4>
             
             <div className="parkupp-logo-container">
-              <img className="parkupp-logo" src={require("../../../Assets/Images/parkupp_logo.png")}/>
+              <img className="parkupp-logo" src={require("../../../Assets/Images/work/parkupp_logo.png")}/>
             </div>
 
             <p className="parkupp-content">
@@ -48,7 +48,7 @@ export class Parkupp extends Component {
             </p>  
 
             <a href="https://parkupp.co.za" target="_blank">
-              <img className="parkupp-img" src={require("../../../Assets/Images/parkupp.png")}/>          
+              <img className="parkupp-img" src={require("../../../Assets/Images/work/parkupp.png")}/>          
             </a>
         </div>
     )}

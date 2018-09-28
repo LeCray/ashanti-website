@@ -46,7 +46,7 @@ export class GalxyBit extends Component {
                 for one of three major cryptocurrencies namely Bitcoin, Litecoin and Ethereum. 
                 The web application and mobile application are still in beta testing mode.
             </p>        
-            <img onClick={()=>scrollToComponent(this.gxb,{offset:0,align:'top',duration:1500})} className="galxybit-img" src={require("../../../Assets/Images/galxybit.png")}/>    
+            <img onClick={()=>scrollToComponent(this.gxb,{offset:0,align:'top',duration:1500})} className="galxybit-img" src={require("../../../Assets/Images/work/galxybit.png")}/>    
         </div>
     )}
 }

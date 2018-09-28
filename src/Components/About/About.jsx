@@ -164,7 +164,7 @@ export default class About extends Component {
 
                                 <div ref={aboutStill} className="about-still">
                                     <h2>ABOUT</h2>
-                                    <p className="learn"><b> - I LIVE TO LEARN - </b></p>
+                                    <p className="learn"><b>Self actualization is the goal</b></p>
                                 </div>
                                 
                                 <div className="aboutLinks">
@@ -211,72 +211,20 @@ export default class About extends Component {
                                 className="aboutRightColContent" 
                                 style={{"-webkit-overflow-scrolling": "touch", display: this.state.columns?null:"none"}}>
 
-                                <h2 className="heading">Jabulani Kunene</h2>
-                                <h4>I am a self taught fullstack developer</h4>
+                                <h2 className="heading">Ashanti Kunene</h2>
+                                <h6>AFRICAN. EXTRA. INTELLIGENT. FEARLESS & GODLY.</h6>
 
                                 <br/><br/>
                                 
-                                <h5 className="heading">University of the Witwatersrand</h5>
+                                <h5 className="heading">Education</h5>
                                 <p>
-                                    1) I am currently taking a break from my 3rd year of Mechanical Engineering studies
-                                    <br/><br/>
-                                    My subjects include:                                    
-                                    <ul>                                        
-                                        <li>Design 3</li> 
-                                        <li>Mechatronics 3</li>  
-                                        <li>Fluid Mechanics 3</li>  
-                                        <li>Mechanics of Vibrations 3</li>  
-                                        <li>Mechanics of Solids 3</li>  
-                                        <li>Numerical Analysis 3</li>  
-                                        <li>Statistics 3</li>
-                                        <li>Maths 3</li> 
-                                    </ul>
-                                    
-                                    2) Right now I am studying Computer Science part-time.
-                                    <br/><br/>
-                                    My subjects include:
-                                    <ul>                                        
-                                        <li>Computational & Applied Mathematics</li>                                         
-                                    </ul>
+                                    Epworth Independent School for Girls, 2007 (include link to Epworth website found here)<br/><br/>                                    
+                                    Stellenbosch University, BA International Studies, 2015 (view certificate here)<br/><br/>
+                                    Stellenbosch University, BA Honors International Studies Cum Laude, 2016 (view certificate here)<br/><br/>
+                                    Bologna University, Global Studies and Critical Theory Summer School, June - July 2016 (view certificate here) Read about my experience here<br/><br/>
+                                    Golden Key International Honour Society (view certificate here)
                                                                         
-                                </p>
-
-                                <hr className="hrLine"/>
-
-                                <h5 className="heading">My Passions & Skills</h5>
-                                <p>
-                                    I first taught myself how to trade the financial markets and am 
-                                    currently developing a cryptocurrency market algorithm with a Computer Science Phd student 
-                                    (my lecturer) to model the crypto market, predict intraday moves and place trades automatically.
-                                    <br/><br/>
-                                    My early interest in cryptocurrency evolved into an interest in <b>Web Development</b> because I then made the decision
-                                    to build <b>GalxyBit</b> - a cryptocurrency exchange (BTC/ZAR, ETH/ZAR, LTC/ZAR)
-                                    <br/><br/>
-                                    I taught myself various coding languages including:
-                                    <ul>                                        
-                                        <li>HTML</li> 
-                                        <li>CSS</li>  
-                                        <li>JavaScript</li>  
-                                        <li>Ruby</li>  
-                                        <li>Java</li>
-                                    </ul>
-                                    And frameworks:
-                                    <ul>
-                                        <li>Android Studio</li>
-                                        <li>React JS</li>  
-                                        <li>Express JS</li>  
-                                        <li>Ruby on Rails</li>  
-                                    </ul>
-                                    I am also very familar with:
-                                    <ul>
-                                        <li>Python</li>
-                                        <li>MATLAB</li>
-                                        <li>Scilab</li>
-                                    </ul>
-                                </p>
-                                
-                                <hr className="hrLine"/>                                
-                                <p className="heading">IT'S POSSIBLE TO LEARN ANYTHING</p>
+                                </p>                                                                                                                            
                             </div>
                         </div>
                     </div>
@@ -291,9 +239,9 @@ export default class About extends Component {
                         </div>
                         <div ref={transitionMain} className="transition-main">
                             <div className="transition-content" style={{display: this.state.txContent?null:"none"}}>
-                                <p ref={FnameTx} className="name-tx">J</p>
+                                <p ref={FnameTx} className="name-tx">A</p>
                                 <p ref={LnameTx} className="name-tx" style={{marginLeft: 5}}>K</p>
-                                <p ref={learnTx} className="learn-tx">- LIVING TO LEARN -</p>
+                                <p ref={learnTx} className="learn-tx">- AFRICAN -</p>
                             </div>
                         </div>
                         <div 

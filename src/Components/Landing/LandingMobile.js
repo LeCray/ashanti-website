@@ -251,7 +251,7 @@ export default class LandingMobile extends Component {
 
                                     
                                     <div ref={whiteBox} className="white-box">
-                                        <img ref={me} className="me-mobile" src={require("../../Assets/Images/me3.jpg")}/>
+                                        <img ref={me} className="me-mobile" src={require("../../Assets/Images/Shanti - Grad Photo.jpg")}/>
                                     </div>
                                     
                                     

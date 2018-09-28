@@ -241,32 +241,24 @@ export default class Work extends Component {
                                         onMouseEnter={() => this.setState({madMobileHover: !this.state.madMobileHover})}
                                         onMouseLeave={() => this.setState({madMobileHover: !this.state.madMobileHover})} 
                                         onClick={this.madMobile}>
-                                        MAD Mobile
-                                    </p>
+                                        Data Analytics
+                                    </p><br/>
                                     <p 
                                         className={this.state.parkuppHover||this.state.parkupp?"workLinkHover":"workLink"}
                                         ref={parkuppSlide}
                                         onMouseEnter={() => this.setState({parkuppHover: !this.state.parkuppHover})}
                                         onMouseLeave={() => this.setState({parkuppHover: !this.state.parkuppHover})} 
                                         onClick={this.parkupp}>
-                                        ParkUpp
-                                    </p>
+                                        Public Speaking, Writing & Poetry
+                                    </p><br/>
                                     <p 
                                         className={this.state.moneyCallsHover||this.state.moneyCalls?"workLinkHover":"workLink"}
                                         ref={moneyCallsSlide}
                                         onMouseEnter={() => this.setState({moneyCallsHover: !this.state.moneyCallsHover})}
                                         onMouseLeave={() => this.setState({moneyCallsHover: !this.state.moneyCallsHover})} 
                                         onClick={this.moneyCalls}>
-                                        Money Calls
-                                    </p>
-                                    <p 
-                                        className={this.state.galxyBitHover||this.state.galxyBit?"workLinkHover":"workLink"}
-                                        ref={galxyBitSlide}
-                                        onMouseEnter={() => this.setState({galxyBitHover: !this.state.galxyBitHover})}
-                                        onMouseLeave={() => this.setState({galxyBitHover: !this.state.galxyBitHover})} 
-                                        onClick={this.galxyBit}>
-                                        GalxyBit
-                                    </p>
+                                        Published Work
+                                    </p>                                    
                                 </div>
                             </div>
 
@@ -347,9 +339,9 @@ export default class Work extends Component {
                     </div>
                     <div ref={transitionMain} className="transition-main" >
                         <div className="transition-content" style={{display: this.state.txContent?null:"none"}}>
-                            <p ref={FnameTx} className="name-tx">J</p>
+                            <p ref={FnameTx} className="name-tx">A</p>
                             <p ref={LnameTx} className="name-tx" style={{marginLeft: 5}}>K</p>
-                            <p ref={learnTx} className="learn-tx">- LIVING TO LEARN -</p>
+                            <p ref={learnTx} className="learn-tx">- INTELLIGENT -</p>
                         </div>
                     </div>
                     <div 

@@ -32,7 +32,7 @@ export class MadMobile extends Component {
             <h4>A real time vehicle diagnostics application</h4>
             
             <div className="mad-mobile-logo-container">
-              <img className="mad-mobile-logo" src={require("../../../Assets/Images/mad_logo.png")}/>
+              <img className="mad-mobile-logo" src={require("../../../Assets/Images/work/mad_logo.png")}/>
             </div>
 
             <p className="mad-content">
@@ -60,7 +60,7 @@ export class MadMobile extends Component {
                 Click on the image below to go to the app.
             </p>
             <a href="https://play.google.com/store/apps/details?id=com.mad_mobile" target="_blank">              
-              <img className="mad-mobile-img" src={require("../../../Assets/Images/mad-mobile.png")}/>
+              <img className="mad-mobile-img" src={require("../../../Assets/Images/work/mad-mobile.png")}/>
             </a>
         </div>
     )}

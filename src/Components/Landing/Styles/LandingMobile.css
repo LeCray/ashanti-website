@@ -27,7 +27,7 @@
 
 	.top-section {		
 		height: 100vh;
-		background: linear-gradient(to bottom right, #0000ff -5%, #66ccff 101%);
+		background: linear-gradient(to top right, #e6c300 0%, #ffec80 100%);
 		text-align: center;		
 		z-index: 1;		
 	}

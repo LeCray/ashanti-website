@@ -32,7 +32,7 @@ export class MoneyCalls extends Component {
             <h4>A foreign exchange web application</h4>
 
             <div className="market-logo-container">
-              <img className="market-logo" src={require("../../../Assets/Images/market.png")}/>
+              <img className="market-logo" src={require("../../../Assets/Images/work/market.png")}/>
             </div>
 
             <p className="money-calls-content">
@@ -48,7 +48,7 @@ export class MoneyCalls extends Component {
                   <li>Performance tracking</li>
                   <li>Embedded cryptocurrency payment system for top trader rewards</li>
                 </ul>
-                <img className="money-calls-img" src={require("../../../Assets/Images/money-calls.png")}/>                
+                <img className="money-calls-img" src={require("../../../Assets/Images/work/money-calls.png")}/>                
             </p>            
         </div>
     )}
