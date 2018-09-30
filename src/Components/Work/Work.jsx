@@ -23,9 +23,9 @@ import Landing from '../Landing/Landing'
 import About from '../About/About'
 import Contact from '../Contact/Contact'
 
-import {MadMobile} from './Content/MadMobile'
-import {Parkupp} from './Content/Parkupp'
-import {MoneyCalls} from './Content/MoneyCalls'
+
+import {PSWP} from './Content/PSWP'
+import {PublishedWork} from './Content/PublishedWork'
 import {DataAnalytics} from './Content/DataAnalytics'
 
 
@@ -41,15 +41,15 @@ export default class Work extends Component {
             contact: false,
             columns: false,
             DataAnalytics: true,            
-            parkupp: false,
-            moneyCalls: false,
+            pswp: false,
+            publishedWork: false,
             transition: false, 
             txContent: false,                                 
             width: window.innerWidth          
         };
         
-        this.parkupp = this.parkupp.bind(this);
-        this.moneyCalls = this.moneyCalls.bind(this);
+        this.pswp = this.pswp.bind(this);
+        this.publishedWork = this.publishedWork.bind(this);
         this.DataAnalytics = this.DataAnalytics.bind(this);
 
         this.homeTransition = this.homeTransition.bind(this);
@@ -65,27 +65,27 @@ export default class Work extends Component {
             this.workLeftCol, this.workRightColContent, 
             this.state.width, this.workStill, this.workLinkHome,
             this.workLinkAbout, this.workLink, this.workLinkContact,
-            this.parkuppSlide, this.moneyCallsSlide, this.DataAnalyticsSlide
+            this.pswpSlide, this.publishedWorkSlide, this.DataAnalyticsSlide
         )
     }
 
-    parkupp() {
+    pswp() {
         switchTo(this.workRightColContent)    
         setTimeout(() => {
             this.setState({
-                parkupp: true,
+                pswp: true,
                 madMobile:false,
-                moneyCalls: false,
+                publishedWork: false,
                 DataAnalytics: false,
             })                
         }, 500)        
     }
-    moneyCalls() {
+    publishedWork() {
         switchTo(this.workRightColContent)
         setTimeout(() => {
             this.setState({
-                moneyCalls: true,
-                parkupp: false,
+                publishedWork: true,
+                pswp: false,
                 madMobile:false,
                 DataAnalytics: false,
             })
@@ -96,8 +96,8 @@ export default class Work extends Component {
         setTimeout(() => {
             this.setState({
                 DataAnalytics: true,
-                moneyCalls: false,
-                parkupp: false,
+                publishedWork: false,
+                pswp: false,
                 madMobile:false,
             })
         }, 500)        
@@ -200,8 +200,8 @@ export default class Work extends Component {
         const LnameTx = LnameTx => this.LnameTx = LnameTx
         const learnTx = learnTx => this.learnTx = learnTx
                 
-        const parkuppSlide = parkuppSlide => this.parkuppSlide = parkuppSlide
-        const moneyCallsSlide = moneyCallsSlide => this.moneyCallsSlide = moneyCallsSlide
+        const pswpSlide = pswpSlide => this.pswpSlide = pswpSlide
+        const publishedWorkSlide = publishedWorkSlide => this.publishedWorkSlide = publishedWorkSlide
         const DataAnalyticsSlide = DataAnalyticsSlide => this.DataAnalyticsSlide = DataAnalyticsSlide
     
 		return(
@@ -227,19 +227,19 @@ export default class Work extends Component {
                                         Data Analytics
                                     </p><br/>
                                     <p 
-                                        className={this.state.parkuppHover||this.state.parkupp?"workLinkHover":"workLink"}
-                                        ref={parkuppSlide}
-                                        onMouseEnter={() => this.setState({parkuppHover: !this.state.parkuppHover})}
-                                        onMouseLeave={() => this.setState({parkuppHover: !this.state.parkuppHover})} 
-                                        onClick={this.parkupp}>
+                                        className={this.state.pswpHover||this.state.pswp?"workLinkHover":"workLink"}
+                                        ref={pswpSlide}
+                                        onMouseEnter={() => this.setState({pswpHover: !this.state.pswpHover})}
+                                        onMouseLeave={() => this.setState({pswpHover: !this.state.pswpHover})} 
+                                        onClick={this.pswp}>
                                         Public Speaking, Writing & Poetry
                                     </p><br/>
                                     <p 
-                                        className={this.state.moneyCallsHover||this.state.moneyCalls?"workLinkHover":"workLink"}
-                                        ref={moneyCallsSlide}
-                                        onMouseEnter={() => this.setState({moneyCallsHover: !this.state.moneyCallsHover})}
-                                        onMouseLeave={() => this.setState({moneyCallsHover: !this.state.moneyCallsHover})} 
-                                        onClick={this.moneyCalls}>
+                                        className={this.state.publishedWorkHover||this.state.publishedWork?"workLinkHover":"workLink"}
+                                        ref={publishedWorkSlide}
+                                        onMouseEnter={() => this.setState({publishedWorkHover: !this.state.publishedWorkHover})}
+                                        onMouseLeave={() => this.setState({publishedWorkHover: !this.state.publishedWorkHover})} 
+                                        onClick={this.publishedWork}>
                                         Published Work
                                     </p>                                    
                                 </div>
@@ -290,14 +290,14 @@ export default class Work extends Component {
                             className="workRightColContent" 
                             style={{"-webkit-overflow-scrolling": "touch", display: this.state.columns?null:"none"}}>
                                                        
-                            <div className="scroller" style={{display: this.state.parkupp?null:"none"}}>
+                            <div className="scroller" style={{display: this.state.pswp?null:"none"}}>
                                 <div>
-                                    <Parkupp />
+                                    <PSWP />
                                 </div>
                             </div>
-                            <div className="scroller" style={{display: this.state.moneyCalls?null:"none"}}>
+                            <div className="scroller" style={{display: this.state.publishedWork?null:"none"}}>
                                 <div>
-                                    <MoneyCalls />
+                                    <PublishedWork />
                                 </div>
                             </div>
                             <div className="scroller" style={{display: this.state.DataAnalytics?null:"none"}}>

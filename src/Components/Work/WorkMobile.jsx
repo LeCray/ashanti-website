@@ -18,9 +18,8 @@ import Landing from '../Landing/Landing'
 import About from '../About/About'
 import Contact from '../Contact/Contact'
 
-import {MadMobile} from './Content/MadMobile'
-import {Parkupp} from './Content/Parkupp'
-import {MoneyCalls} from './Content/MoneyCalls'
+import {PSWP} from './Content/PSWP'
+import {PublishedWork} from './Content/PublishedWork'
 import {DataAnalytics} from './Content/DataAnalytics'
 
 
@@ -36,13 +35,13 @@ export default class WorkMobile extends Component {
             contact: false,
             
             madMobile:true,
-            parkupp: false,
+            pswp: false,
             moneyCalls: false,
             DataAnalytics: false,            
         };
 
         this.madMobile = this.madMobile.bind(this);
-        this.parkupp = this.parkupp.bind(this);
+        this.pswp = this.pswp.bind(this);
         this.moneyCalls = this.moneyCalls.bind(this);
         this.DataAnalytics = this.DataAnalytics.bind(this);
 
@@ -54,14 +53,14 @@ export default class WorkMobile extends Component {
     madMobile() {
         this.setState({
             madMobile:true,
-            parkupp: false,
+            pswp: false,
             moneyCalls: false,
             DataAnalytics: false,
         })
     }
-    parkupp() {
+    pswp() {
         this.setState({
-            parkupp: true,
+            pswp: true,
             madMobile:false,
             moneyCalls: false,
             DataAnalytics: false,
@@ -70,7 +69,7 @@ export default class WorkMobile extends Component {
     moneyCalls() {
         this.setState({
             moneyCalls: true,
-            parkupp: false,
+            pswp: false,
             madMobile:false,
             DataAnalytics: false,
         })
@@ -79,7 +78,7 @@ export default class WorkMobile extends Component {
         this.setState({
             DataAnalytics: true,
             moneyCalls: false,
-            parkupp: false,
+            pswp: false,
             madMobile:false,
         })
     }
@@ -129,7 +128,7 @@ export default class WorkMobile extends Component {
                             {/*<hr className="workHr"/>*/}
                             <div className="work-intra-links">
                                 <p className="work-link" style={{marginLeft: 0}} onClick={()=>scrollToComponent(this.mad,{offset:-45,align:'top',ease:'inOutCirc',duration:1500})}>MAD Mobile</p>
-                                <p className="work-link" onClick={()=>scrollToComponent(this.parkupp,{offset:-45,align:'top',ease:'inOutCirc',duration:1500})}>ParkUpp</p>
+                                <p className="work-link" onClick={()=>scrollToComponent(this.pswp,{offset:-45,align:'top',ease:'inOutCirc',duration:1500})}>pswp</p>
                                 <p className="work-link" onClick={()=>scrollToComponent(this.moneycalls,{offset:-45,align:'top',ease:'inOutCirc',duration:1500})}>Money Calls</p>
                                 <p className="work-link" onClick={()=>scrollToComponent(this.DataAnalytics,{offset:-45,align:'top',ease:'inOutCirc',duration:1500})}>DataAnalytics</p>
                             </div>                           
@@ -138,17 +137,14 @@ export default class WorkMobile extends Component {
 
                     <div className="work-right-col">
                         <div className="work-right-col-content" style={{"-webkit-overflow-scrolling": "touch"}}>
-
-                            <div ref={(section)=>{this.mad = section;}} className="work-content-mobile">
-                                <MadMobile />
-                            </div>
+ 
                             <hr className="work-hr"/>
-                            <div ref={(section)=>{this.parkupp = section;}} className="work-content-mobile">
-                                <Parkupp />
+                            <div ref={(section)=>{this.pswp = section;}} className="work-content-mobile">
+                                <PSWP />
                             </div>
                             <hr className="work-hr"/>
                             <div ref={(section)=>{this.moneycalls = section;}} className="work-content-mobile">
-                                <MoneyCalls />
+                                <PublishedWork />
                             </div>
                             <hr className="work-hr"/>
                             <div ref={(section)=>{this.DataAnalytics = section;}} className="work-content-mobile">
