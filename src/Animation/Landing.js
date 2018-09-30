@@ -12,7 +12,7 @@ export const loading = (activity) => {
 
 }
 
-export const topSection = (landingHome,rocket,Fname,Lname, whiteBox, me, hr, summary, aboutLink, workLink, contactLink) => {
+export const topSection = (landingHome,rocket,Fname,Lname, whiteBox, me, hr, summary, aboutLink, workLink,videoLink, contactLink) => {
 
   	var intro = new TimelineMax();
 
@@ -113,7 +113,7 @@ export const topSection = (landingHome,rocket,Fname,Lname, whiteBox, me, hr, sum
         x:100
     }, "firstPartIsDone+=1.3")*/
 
-    .staggerFrom([aboutLink,workLink,contactLink], 2, {
+    .staggerFrom([aboutLink,workLink,videoLink,contactLink], 2, {
         x:50,y:10, opacity:0, ease: Elastic.easeOut.config(1.2, .9)
     }, .2, "firstPartIsDone")
     

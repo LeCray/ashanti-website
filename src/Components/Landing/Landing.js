@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom'
 import {loading, topSection} from '../../Animation/Landing'
 import {aboutEnter} from '../../Animation/About'
 import {workEnter} from '../../Animation/Work'
+import {videoEnter} from '../../Animation/Video'
 import {contactEnter} from '../../Animation/Contact'
 
 import {Transition} from '../../Animation/Transition'
@@ -19,6 +20,7 @@ import './Styles/LandingTransitions.css'
 
 import LandingMobile from './LandingMobile'
 import Work from '../Work/Work'
+import Video from '../Video/Video'
 import About from '../About/About'
 import Contact from '../Contact/Contact'
 
@@ -34,10 +36,11 @@ export default class Landing extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            loading: false,   
+            loading: true,   
             landingHome: false,
             about: false,
-            work: true,
+            work: false,
+            video: false,
             contact: false,
             mobile: false,
             transition: false,
@@ -45,6 +48,7 @@ export default class Landing extends Component {
         };
 
         this.workTransition = this.workTransition.bind(this);
+        this.videoTransition = this.videoTransition.bind(this);
         this.aboutTransition = this.aboutTransition.bind(this);
         this.contactTransition = this.contactTransition.bind(this);
     }
@@ -70,7 +74,7 @@ export default class Landing extends Component {
                 topSection(
                     this.landingHome, this.rocket, this.Fname, this.Lname, 
                     this.whiteBox, this.me, this.hr, this.summary, 
-                    this.aboutLink, this.workLink, this.contactLink
+                    this.aboutLink, this.workLink, this.videoLink, this.contactLink
                 )
             }            
         }, 1000)
@@ -86,6 +90,7 @@ export default class Landing extends Component {
         this.setState({
             about: true,
             work: false,
+            video: false,
             contact: false,            
         })        
         aboutEnter(this.aboutHome)  
@@ -110,9 +115,35 @@ export default class Landing extends Component {
         this.setState({
             about: false,
             work: true,
+            video: false,
             contact: false
         })
         workEnter(this.workHome)
+
+        setTimeout(() => {
+            this.setState({landingHome: false})
+        }, 2000)
+        setTimeout(() => {
+            this.setState({txContent: false})
+        }, 3000)
+        setTimeout(() => {
+            this.setState({transition: false})
+        }, 3300) 
+    }
+    async videoTransition() {
+        await this.setState({transition: true, txContent: true,})
+        Transition(
+            this.transitionFirst, this.transitionMain, 
+            this.transitionSecond,this.FnameTx,this.LnameTx, 
+            this.state.width, this.learnTx
+        )
+        this.setState({
+            about: false,
+            work: false,
+            video: true,
+            contact: false
+        })
+        videoEnter(this.videoHome)
 
         setTimeout(() => {
             this.setState({landingHome: false})
@@ -134,6 +165,7 @@ export default class Landing extends Component {
         this.setState({
             about: false,
             work: false,
+            video: false,
             contact: true
         })
         contactEnter(this.contactHome)
@@ -168,10 +200,12 @@ export default class Landing extends Component {
         const hr = hr => this.hr = hr
         const aboutLink = aboutLink => this.aboutLink = aboutLink
         const workLink = workLink => this.workLink = workLink
+        const videoLink = videoLink => this.videoLink = videoLink
         const contactLink = contactLink => this.contactLink = contactLink
 
         const aboutHome = aboutHome => this.aboutHome = aboutHome
         const workHome = workHome => this.workHome = workHome
+        const videoHome = videoHome => this.videoHome = videoHome
         const contactHome = contactHome => this.contactHome = contactHome
 
        const transitionFirst  = transitionFirst  => this.transitionFirst  = transitionFirst
@@ -209,7 +243,7 @@ export default class Landing extends Component {
                                         </div>
                                     </div>
 
-                                    <div className={this.state.aboutHover||this.state.workHover||this.state.contactHover?"links-correction":"links"}>
+                                    <div className={this.state.aboutHover||this.state.workHover||this.state.videoHover||this.state.contactHover?"links-correction":"links"}>
                                         <p 
                                             ref={aboutLink} 
                                             className={this.state.aboutHover?"link-hover":"link"}
@@ -227,6 +261,14 @@ export default class Landing extends Component {
                                             Work
                                         </p>
                                         <p 
+                                            ref={videoLink} 
+                                            className={this.state.videoHover?"link-hover":"link"} 
+                                            onClick={this.videoTransition}
+                                            onMouseEnter={() => this.setState({videoHover: !this.state.videoHover})}
+                                            onMouseLeave={() => this.setState({videoHover: !this.state.videoHover})}>
+                                            Video
+                                        </p>
+                                        <p 
                                             ref={contactLink} 
                                             className={this.state.contactHover?"link-hover":"link"}
                                             onClick={this.contactTransition}
@@ -239,7 +281,7 @@ export default class Landing extends Component {
 
                             </Col>                            
                             <div ref={whiteBox} className="whiteBox">                                
-                                <img ref={me} className="me" src={require("../../Assets/Images/Shanti - Grad Photo.jpg")}/>
+                                <img ref={me} className="me" src={require("../../Assets/Images/shanti-grad.jpg")}/>
                             </div>
                         </Row>                                                        
                     </div>
@@ -277,6 +319,12 @@ export default class Landing extends Component {
                 {this.state.work?   
                     <div ref={workHome} className="workHome">                 
                         <Work />
+                    </div>
+                :null}
+
+                {this.state.video?   
+                    <div ref={videoHome} className="videoHome">                 
+                        <Video />
                     </div>
                 :null}
 

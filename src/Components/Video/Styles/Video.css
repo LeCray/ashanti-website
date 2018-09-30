@@ -1,4 +1,4 @@
-.contactLeftCol {
+.videoLeftCol {
 	position: absolute;
 	z-index: 60;
 	top: 0px;
@@ -8,84 +8,84 @@
 	background: linear-gradient(to top right, #e6c300 0%, #ffec80 100%);	
 }
 
-.contactWhite {
+.videoWhite {
 	letter-spacing: 2px;
 	text-align: center;
 	color: #fff;
 	padding-top: 25%;
 	font-weight: bold;
 }
-.contactHr {
+.videoHr {
 	border-color: #fff;	
 	width: 50%;
 }
 
 
-.contactLink {
+.videoLink {
 	margin-left: 20px;
 	display: inline-block;
 	cursor: pointer;
 }
-.contactLinkHover {
+.videoLinkHover {
 	margin-left: 20px;
 	display: inline-block;
 	cursor: pointer;		
 	border-bottom: 3px solid white;
 }
-.contactLinks {		
+.videoLinks {		
 	position: absolute;
 	left: 50%;
 	bottom: 70px;
 	width: 100%;		
 	text-align: center;
 }
-.contact-link-content {
+.video-link-content {
 	position: relative;
 	left: -50%;	
 }
-.contactLinksCorrection {		
+.videoLinksCorrection {		
 	position: absolute;
 	left: 50%;
 	bottom: 67px;
 	width: 100%;		
 	text-align: center;
 }
-.contact-intra-links {	
+.video-intra-links {	
 	display: inline-block;	
 	
 }
-.contactRightCol {
+.videoRightCol {
 	margin-left: 50%;
 	height: 100vh;
 	width: 50%;
 	font-size: 20px;
 }
-.contactRightColContent {
+.videoRightColContent {
 	height: 100%;
 	padding: 50px 100px 100px 100px;
 	color: black;
 	overflow-y: scroll;	
 
 }
-.contact-details-container {
+.video-details-container {
 	width: 100%;
 	border: 1px solid red
 }
-.contact-details {
+.video-details {
 	
 	
 }
-.contact-details-2 {
+.video-details-2 {
 	
 }
 
-.me-contact {
+.me-video {
 	height: 300px;
 	margin-top: 50px;
 }
-.name-contact {			
+.name-video {			
 	font-weight: bold;	
 }
-.contact-heading {
+.video-heading {
 	font-weight: bold;
 }

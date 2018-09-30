@@ -143,7 +143,7 @@ export default class WorkMobile extends Component {
                                 <PSWP />
                             </div>
                             <hr className="work-hr"/>
-                            <div ref={(section)=>{this.moneycalls = section;}} className="work-content-mobile">
+                            <div ref={(section)=>{this.PublishedWork = section;}} className="work-content-mobile">
                                 <PublishedWork />
                             </div>
                             <hr className="work-hr"/>

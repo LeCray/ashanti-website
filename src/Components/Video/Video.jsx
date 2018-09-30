@@ -7,10 +7,10 @@ import 'react-activity/dist/react-activity.css';
 import { Link } from 'react-router-dom'
 
 
-import './Styles/Contact.css'
-import './Styles/ContactMobile.css'
+import './Styles/Video.css'
+import './Styles/VideoMobile.css'
 
-import {contactColumns} from '../../Animation/Contact'
+import {videoColumns} from '../../Animation/Video'
 import {aboutEnter} from '../../Animation/About'
 import {workEnter} from '../../Animation/Work'
 import {Transition} from '../../Animation/Transition'
@@ -25,7 +25,7 @@ import scrollToComponent from 'react-scroll-to-component';
 
 
 
-export default class Contact extends Component {
+export default class Video extends Component {
     
     constructor(props) {
         super(props);
@@ -33,23 +33,25 @@ export default class Contact extends Component {
             home: false,
             about: false,
             work: false,
-            contact: true,
+            video: true,
+            contact: false,
             columns: false,
             transition: false,
             width: window.innerWidth
         }
             
         this.homeTransition = this.homeTransition.bind(this);
-        this.workTransition = this.workTransition.bind(this);
         this.aboutTransition = this.aboutTransition.bind(this);       
+        this.workTransition = this.workTransition.bind(this);
+        this.contactTransition = this.contactTransition.bind(this);
     }
 
     componentDidMount() {                
         this.setState({columns: true})            
-        contactColumns(
-            this.contactLeftCol, this.contactRightColContent, 
-            this.state.width, this.contactStill, this.contactLinkHome,
-            this.contactLinkAbout, this.contactLinkWork, this.contactLink
+        videoColumns(
+            this.videoLeftCol, this.videoRightColContent, 
+            this.state.width, this.videoStill, this.videoLinkHome,
+            this.videoLinkAbout, this.videoLinkWork, this.videoLink
         )
     }
 
@@ -59,7 +61,8 @@ export default class Contact extends Component {
             txContent: true,
             home: true, 
             about: false,           
-            work: false,            
+            work: false, 
+            contact: false           
         })
         //homeEnter(this.home)
         Transition(
@@ -69,7 +72,7 @@ export default class Contact extends Component {
         )
 
         setTimeout(() => {
-            this.setState({contact: false})
+            this.setState({video: false})
         }, 1000)
         setTimeout(() => {
             this.setState({txContent: false})
@@ -84,7 +87,8 @@ export default class Contact extends Component {
             txContent: true,
             home: false, 
             about: true,           
-            work: false,            
+            work: false, 
+            contact: false           
         })
         Transition(
             this.transitionFirst, this.transitionMain, 
@@ -94,7 +98,7 @@ export default class Contact extends Component {
         aboutEnter(this.aboutHome)
 
         setTimeout(() => {
-            this.setState({contact: false})
+            this.setState({video: false})
         }, 2000)
         setTimeout(() => {
             this.setState({txContent: false})
@@ -109,7 +113,8 @@ export default class Contact extends Component {
             txContent: true,
             home: false, 
             about: false,           
-            work: true,            
+            work: true,
+            contact: false            
         })
         Transition(
             this.transitionFirst, this.transitionMain, 
@@ -119,7 +124,33 @@ export default class Contact extends Component {
         workEnter(this.workHome)
 
         setTimeout(() => {
-            this.setState({contact: false})
+            this.setState({video: false})
+        }, 2000)
+        setTimeout(() => {
+            this.setState({txContent: false})
+        }, 3000)
+        setTimeout(() => {
+            this.setState({transition: false})
+        }, 3300)
+    }
+    async contactTransition() {
+        await this.setState({
+            transition: true,
+            txContent: true,
+            home: false, 
+            about: false,           
+            work: false,
+            contact: true,            
+        })
+        Transition(
+            this.transitionFirst, this.transitionMain, 
+            this.transitionSecond,this.FnameTx,this.LnameTx, 
+            this.state.width, this.learnTx
+        )
+        workEnter(this.workHome)
+
+        setTimeout(() => {
+            this.setState({video: false})
         }, 2000)
         setTimeout(() => {
             this.setState({txContent: false})
@@ -136,14 +167,14 @@ export default class Contact extends Component {
         const aboutHome = aboutHome => this.aboutHome = aboutHome
         const workHome = workHome => this.workHome = workHome	
 
-        const contactLeftCol = contactLeftCol => this.contactLeftCol = contactLeftCol
-        const contactRightColContent = contactRightColContent => this.contactRightColContent = contactRightColContent 
-        const contactStill = contactStill => this.contactStill = contactStill
+        const videoLeftCol = videoLeftCol => this.videoLeftCol = videoLeftCol
+        const videoRightColContent = videoRightColContent => this.videoRightColContent = videoRightColContent 
+        const videoStill = videoStill => this.videoStill = videoStill
 
-        const contactLinkHome = contactLinkHome => this.contactLinkHome = contactLinkHome
-        const contactLinkAbout = contactLinkAbout => this.contactLinkAbout = contactLinkAbout
-        const contactLinkWork = contactLinkWork => this.contactLinkWork = contactLinkWork
-        const contactLink = contactLink => this.contactLink = contactLink
+        const videoLinkHome = videoLinkHome => this.videoLinkHome = videoLinkHome
+        const videoLinkAbout = videoLinkAbout => this.videoLinkAbout = videoLinkAbout
+        const videoLinkWork = videoLinkWork => this.videoLinkWork = videoLinkWork
+        const videoLink = videoLink => this.videoLink = videoLink
 
         const transitionFirst  = transitionFirst  => this.transitionFirst  = transitionFirst
         const transitionMain  = transitionMain  => this.transitionMain  = transitionMain
@@ -155,73 +186,73 @@ export default class Contact extends Component {
 		return(
             <div>
                 <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300" rel="stylesheet"/>
-                {this.state.contact?
+                {this.state.video?
 
                     <div style={{fontFamily: "Josefin Sans"}}>
 
-                        <div ref={contactLeftCol} className="contactLeftCol">
-                            <div className="contactWhite">
-                                <h2 ref={contactStill}>CONTACT</h2>                                
+                        <div ref={videoLeftCol} className="videoLeftCol">
+                            <div className="videoWhite">
+                                <h2 ref={videoStill}>video</h2>                                
                                 
-                                <div className="contactLinks">
-                                    <div className="contact-link-content">
+                                <div className="videoLinks">
+                                    <div className="video-link-content">
                                         <p 
-                                            className={this.state.homeHover?"contactLinkHover":"contactLink"}
-                                            ref={contactLinkHome} 
+                                            className={this.state.homeHover?"videoLinkHover":"videoLink"}
+                                            ref={videoLinkHome} 
                                             onClick={this.homeTransition}
                                             onMouseEnter={() => this.setState({homeHover: !this.state.homeHover})}
                                             onMouseLeave={() => this.setState({homeHover: !this.state.homeHover})}>
                                             Home
                                         </p>
                                         <p 
-                                            className={this.state.aboutHover||this.state.about?"contactLinkHover":"contactLink"}
-                                            ref={contactLinkAbout}
+                                            className={this.state.aboutHover||this.state.about?"videoLinkHover":"videoLink"}
+                                            ref={videoLinkAbout}
                                             onClick={this.aboutTransition}
                                             onMouseEnter={() => this.setState({aboutHover: !this.state.aboutHover})}
                                             onMouseLeave={() => this.setState({aboutHover: !this.state.aboutHover})}>
                                             About
                                         </p>
                                         <p 
-                                            className={this.state.workHover||this.state.work?"contactLinkHover":"contactLink"}
-                                            ref={contactLinkWork}             
+                                            className={this.state.workHover||this.state.work?"videoLinkHover":"videoLink"}
+                                            ref={videoLinkWork}             
                                             onClick={this.workTransition}                            
                                             onMouseEnter={() => this.setState({workHover: !this.state.workHover})}
                                             onMouseLeave={() => this.setState({workHover: !this.state.workHover})}>
                                             Work
                                         </p>
                                         <p 
-                                            className={this.state.contactHover||this.state.contact?"contactLinkHover":"contactLink"} 
-                                            ref={contactLink}                                     
-                                            onMouseEnter={() => this.setState({contactHover: !this.state.contactHover})}
-                                            onMouseLeave={() => this.setState({contactHover: !this.state.contactHover})}>
-                                            Contact
+                                            className={this.state.videoHover||this.state.video?"videoLinkHover":"videoLink"} 
+                                            ref={videoLink}                                     
+                                            onMouseEnter={() => this.setState({videoHover: !this.state.videoHover})}
+                                            onMouseLeave={() => this.setState({videoHover: !this.state.videoHover})}>
+                                            video
                                         </p>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div className="contactRightCol">
+                        <div className="videoRightCol">
                             <div
-                                ref={contactRightColContent} 
-                                className="contactRightColContent" 
+                                ref={videoRightColContent} 
+                                className="videoRightColContent" 
                                 style={{"-webkit-overflow-scrolling": "touch", display: this.state.columns?null:"none"}}>
 
-                                <h4 className="contact-heading">Looking forward to hearing from you!</h4>                            
+                                <h4 className="video-heading">Looking forward to hearing from you!</h4>                            
                                 <hr/>
                                 <br/>
-                                <h4 className="name-contact">Ashanti Kunene</h4>
+                                <h4 className="name-video">Ashanti Kunene</h4>
                                 
 
                                 <Row>
-                                    <Col className="contact-container" lg={6}>
-                                        <h5 className="contact-details">Email:</h5>                                        
+                                    <Col className="video-container" lg={6}>
+                                        <h5 className="video-details">Email:</h5>                                        
                                     </Col>
-                                    <Col className="contact-container-2" lg={6}>
-                                        <h5 className="contact-details-2">ashantikunene123@gmail.com</h5>
+                                    <Col className="video-container-2" lg={6}>
+                                        <h5 className="video-details-2">ashantikunene123@gmail.com</h5>
                                     </Col>
                                 </Row>
-                                <img className="me-contact" src={require("../../Assets/Images/shanti-grad.jpg")}/>
+                                <img className="me-video" src={require("../../Assets/Images/shanti-grad.jpg")}/>
 
                             </div>
                         </div>

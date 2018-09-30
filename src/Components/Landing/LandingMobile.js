@@ -126,6 +126,17 @@ export default class LandingMobile extends Component {
             scrollToComponent(this.work,{offset:0,align:'top',ease:'inOutCirc',duration:1500})
         }, 300)
     }
+    videoMenuLink() {
+        menuClose(this.hamburger,this.hexagon,this.menuScreen,this.aboutLinkMenu,this.workLinkMenu,this.contactLinkMenu)
+
+        setTimeout(() => {
+            this.setState({menuOpen: false})
+        }, 1000)
+
+        setTimeout(() => {
+            scrollToComponent(this.work,{offset:0,align:'top',ease:'inOutCirc',duration:1500})
+        }, 300)
+    }
     contactMenuLink() {                
         menuClose(this.hamburger,this.hexagon,this.menuScreen,this.aboutLinkMenu,this.workLinkMenu,this.contactLinkMenu)
 
@@ -172,6 +183,7 @@ export default class LandingMobile extends Component {
 
         const aboutLinkMenu = aboutLinkMenu => this.aboutLinkMenu = aboutLinkMenu
         const workLinkMenu = workLinkMenu => this.workLinkMenu = workLinkMenu
+        const videoLinkMenu = videoLinkMenu => this.videoLinkMenu = videoLinkMenu
         const contactLinkMenu = contactLinkMenu => this.contactLinkMenu = contactLinkMenu
 
         const hamburger = hamburger => this.hamburger = hamburger
@@ -219,6 +231,9 @@ export default class LandingMobile extends Component {
                             <p ref={workLinkMenu} className="link-mobile-menu" onClick={this.workMenuLink}>
                                 WORK 
                             </p>
+                            <p ref={videoLinkMenu} className="link-mobile-menu" onClick={this.videoMenuLink}>
+                                VIDEO 
+                            </p>
                             <p ref={contactLinkMenu} className="link-mobile-menu" onClick={this.contactMenuLink}>
                                 CONTACT 
                             </p>
@@ -251,7 +266,7 @@ export default class LandingMobile extends Component {
 
                                     
                                     <div ref={whiteBox} className="white-box">
-                                        <img ref={me} className="me-mobile" src={require("../../Assets/Images/Shanti - Grad Photo.jpg")}/>
+                                        <img ref={me} className="me-mobile" src={require("../../Assets/Images/shanti-grad.jpg")}/>
                                     </div>
                                     
                                     
