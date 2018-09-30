@@ -17,7 +17,7 @@ export const aboutEnter = (aboutHome) => {
 
 }
 
-export const aboutColumns = (aboutLeftCol,aboutRightColContent,width,aboutStill,aboutLinkhome,aboutLink,aboutLinkWork,aboutLinkContact) => {	
+export const aboutColumns = (aboutLeftCol,aboutRightColContent,width,aboutStill,aboutLinkhome,aboutLink,aboutLinkWork,aboutLinkVideo,aboutLinkContact) => {	
 
   	var tl = new TimelineMax();
 
@@ -39,7 +39,7 @@ export const aboutColumns = (aboutLeftCol,aboutRightColContent,width,aboutStill,
     	ease: Power2.easeOut
     }, "start+=.5")
 
-    .staggerFrom([aboutLinkhome,aboutLink,aboutLinkWork,aboutLinkContact], 2.5, {
+    .staggerFrom([aboutLinkhome,aboutLink,aboutLinkWork,aboutLinkVideo,aboutLinkContact], 2.5, {
     	y:50, opacity:0, ease: Elastic.easeOut.config(1.2, 1)
     }, 0.3, "start+=.7")
 }

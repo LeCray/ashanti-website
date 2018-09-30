@@ -230,7 +230,7 @@ export default class Contact extends Component {
                                             onClick={this.videoTransition}                            
                                             onMouseEnter={() => this.setState({videoHover: !this.state.videoHover})}
                                             onMouseLeave={() => this.setState({videoHover: !this.state.videoHover})}>
-                                            Video
+                                            Videos
                                         </p>
                                         <p 
                                             className={this.state.contactHover||this.state.contact?"contactLinkHover":"contactLink"} 

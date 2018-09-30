@@ -11,10 +11,12 @@ import './Styles/AboutMobile.css'
 
 import Landing from '../Landing/Landing'
 import Work from '../Work/Work'
+import Video from '../Video/Video'
 import Contact from '../Contact/Contact'
 
 import {aboutColumns} from '../../Animation/About'
 import {workEnter} from '../../Animation/Work'
+import {videoEnter} from '../../Animation/Video'
 import {contactEnter} from '../../Animation/Contact'
 import {Transition} from '../../Animation/Transition'
 
@@ -32,6 +34,7 @@ export default class About extends Component {
             home: false,
             about: true,
             work: false,
+            video: false,
             contact: false,
             columns: false,
             transition: false,
@@ -42,6 +45,7 @@ export default class About extends Component {
 
         this.homeTransition = this.homeTransition.bind(this);
         this.workTransition = this.workTransition.bind(this);
+        this.videoTransition = this.videoTransition.bind(this);
         this.contactTransition = this.contactTransition.bind(this);       
     }
 
@@ -51,7 +55,7 @@ export default class About extends Component {
         aboutColumns(
             this.aboutLeftCol, this.aboutRightColContent, 
             this.state.width, this.aboutStill, this.aboutLinkHome,
-            this.aboutLink, this.aboutLinkWork, this.aboutLinkContact
+            this.aboutLink, this.aboutLinkWork, this.aboutLinkVideo, this.aboutLinkContact
         )
     }
 
@@ -61,7 +65,8 @@ export default class About extends Component {
             txContent: true,                    
             home: true, 
             work: false,
-            contact: false
+            contact: false,
+            video: false
         })
         //homeEnter(this.home)
         Transition(
@@ -86,7 +91,8 @@ export default class About extends Component {
             txContent: true,
             home: false,                     
             work: true,
-            contact: false
+            contact: false,
+            video: false
         })
         Transition(
             this.transitionFirst, this.transitionMain, 
@@ -105,13 +111,40 @@ export default class About extends Component {
             this.setState({transition: false})
         }, 3300)
     }
+    async videoTransition() {
+        await this.setState({
+            transition: true,
+            txContent: true,
+            home: false,                     
+            work: false,
+            contact: false,
+            video: true
+        })
+        Transition(
+            this.transitionFirst, this.transitionMain, 
+            this.transitionSecond,this.FnameTx,this.LnameTx, 
+            this.state.width, this.learnTx
+        )        
+        videoEnter(this.videoHome)
+        
+        setTimeout(() => {
+            this.setState({about: false})
+        }, 2000)
+        setTimeout(() => {
+            this.setState({txContent: false})
+        }, 3000)
+        setTimeout(() => {
+            this.setState({transition: false})
+        }, 3300)
+    }
     async contactTransition() {
         await this.setState({
             transition: true,
             txContent: true,
             home: false,                     
             work: false,
-            contact: true
+            contact: true,
+            video: false
         })
         Transition(
             this.transitionFirst, this.transitionMain, 
@@ -135,6 +168,7 @@ export default class About extends Component {
 	render() {	
         const home = home => this.home = home
         const workHome = workHome => this.workHome = workHome
+        const videoHome = videoHome => this.videoHome = videoHome
         const contactHome = contactHome => this.contactHome = contactHome
 
         const aboutLeftCol = aboutLeftCol => this.aboutLeftCol = aboutLeftCol
@@ -144,6 +178,7 @@ export default class About extends Component {
         const aboutLinkHome = aboutLinkHome => this.aboutLinkHome = aboutLinkHome
         const aboutLink = aboutLink => this.aboutLink = aboutLink
         const aboutLinkWork = aboutLinkWork => this.aboutLinkWork = aboutLinkWork
+        const aboutLinkVideo = aboutLinkVideo => this.aboutLinkVideo = aboutLinkVideo
         const aboutLinkContact = aboutLinkContact => this.aboutLinkContact = aboutLinkContact
 
         const transitionFirst  = transitionFirst  => this.transitionFirst  = transitionFirst
@@ -191,6 +226,14 @@ export default class About extends Component {
                                             onMouseEnter={() => this.setState({workHover: !this.state.workHover})}
                                             onMouseLeave={() => this.setState({workHover: !this.state.workHover})}>
                                             Work
+                                        </p>
+                                        <p 
+                                            className={this.state.videoHover||this.state.video?"about-link-hover":"aboutLink"}
+                                            ref={aboutLinkVideo} 
+                                            onClick={this.videoTransition}
+                                            onMouseEnter={() => this.setState({videoHover: !this.state.videoHover})}
+                                            onMouseLeave={() => this.setState({videoHover: !this.state.videoHover})}>
+                                            Videos
                                         </p>
                                         <p 
                                             className={this.state.contactHover||this.state.contact?"about-link-hover":"aboutLink"} 
@@ -261,6 +304,12 @@ export default class About extends Component {
                 {this.state.work?   
                     <div ref={workHome} className="workHome">                 
                         <Work />
+                    </div>
+                :null}
+
+                {this.state.video?   
+                    <div ref={videoHome} className="videoHome">                 
+                        <Video />
                     </div>
                 :null}
 
