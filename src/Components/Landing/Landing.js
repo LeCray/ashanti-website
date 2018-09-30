@@ -36,11 +36,11 @@ export default class Landing extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            loading: true,   
+            loading: false,   
             landingHome: false,
             about: false,
             work: false,
-            video: false,
+            video: true,
             contact: false,
             mobile: false,
             transition: false,

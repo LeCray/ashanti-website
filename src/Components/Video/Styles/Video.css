@@ -89,3 +89,8 @@
 .video-heading {
 	font-weight: bold;
 }
+
+.video {
+  height: 310px; 
+  width: 100%
+}

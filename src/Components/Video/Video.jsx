@@ -21,6 +21,8 @@ import About from '../About/About'
 import Work from '../Work/Work'
 import Contact from '../Contact/Contact'
 
+import Videos from './Content/Videos'
+
 import {TweenMax, Power2, TimelineLite, Elastic, Circ, Back, Power4, TimelineMax} from "gsap/TweenMax";
 import scrollToComponent from 'react-scroll-to-component';
 
@@ -196,7 +198,7 @@ export default class Video extends Component {
 
                         <div ref={videoLeftCol} className="videoLeftCol">
                             <div className="videoWhite">
-                                <h2 ref={videoStill}>VIDEO</h2>                                
+                                <h2 ref={videoStill}>VIDEOS</h2>                                
                                 
                                 <div className="videoLinks">
                                     <div className="video-link-content">
@@ -250,21 +252,7 @@ export default class Video extends Component {
                                 className="videoRightColContent" 
                                 style={{"-webkit-overflow-scrolling": "touch", display: this.state.columns?null:"none"}}>
 
-                                <h4 className="video-heading">Looking forward to hearing from you!</h4>                            
-                                <hr/>
-                                <br/>
-                                <h4 className="name-video">Ashanti Kunene</h4>
-                                
-
-                                <Row>
-                                    <Col className="video-container" lg={6}>
-                                        <h5 className="video-details">Email:</h5>                                        
-                                    </Col>
-                                    <Col className="video-container-2" lg={6}>
-                                        <h5 className="video-details-2">ashantikunene123@gmail.com</h5>
-                                    </Col>
-                                </Row>
-                                <img className="me-video" src={require("../../Assets/Images/shanti-grad.jpg")}/>
+                                <Videos />
 
                             </div>
                         </div>
