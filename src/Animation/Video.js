@@ -17,7 +17,7 @@ export const videoEnter = (videoHome) => {
 
 }
 
-export const videoColumns = (videoLeftCol,videoRightColContent,width,videoStill,videoLinkhome,videoLinkAbout,videoLinkWork,videoLink) => {
+export const videoColumns = (videoLeftCol,videoRightColContent,width,videoStill,videoLinkhome,videoLinkAbout,videoLinkWork,videoLink,videoLinkContact) => {
 	
 
   	var tl = new TimelineMax();
@@ -40,7 +40,7 @@ export const videoColumns = (videoLeftCol,videoRightColContent,width,videoStill,
     	ease: Power2.easeOut
     }, "start+=.5")
 
-    .staggerFrom([videoLinkhome,videoLinkAbout,videoLinkWork,videoLink], 2.5, {
+    .staggerFrom([videoLinkhome,videoLinkAbout,videoLinkWork,videoLink,videoLinkContact], 2.5, {
     	y:50, opacity:0, ease:  Elastic.easeOut.config(1.2, 1)
     }, 0.3, "start+=.7")
 }

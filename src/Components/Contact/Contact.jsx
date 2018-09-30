@@ -13,11 +13,13 @@ import './Styles/ContactMobile.css'
 import {contactColumns} from '../../Animation/Contact'
 import {aboutEnter} from '../../Animation/About'
 import {workEnter} from '../../Animation/Work'
+import {videoEnter} from '../../Animation/Video'
 import {Transition} from '../../Animation/Transition'
 
 import Landing from '../Landing/Landing'
 import About from '../About/About'
 import Work from '../Work/Work'
+import Video from '../Video/Video'
 
 import {TweenMax, Power2, TimelineLite, Elastic, Circ, Back, Power4, TimelineMax} from "gsap/TweenMax";
 import scrollToComponent from 'react-scroll-to-component';
@@ -33,6 +35,7 @@ export default class Contact extends Component {
             home: false,
             about: false,
             work: false,
+            video: false,
             contact: true,
             columns: false,
             transition: false,
@@ -41,6 +44,7 @@ export default class Contact extends Component {
             
         this.homeTransition = this.homeTransition.bind(this);
         this.workTransition = this.workTransition.bind(this);
+        this.videoTransition = this.videoTransition.bind(this);
         this.aboutTransition = this.aboutTransition.bind(this);       
     }
 
@@ -49,7 +53,7 @@ export default class Contact extends Component {
         contactColumns(
             this.contactLeftCol, this.contactRightColContent, 
             this.state.width, this.contactStill, this.contactLinkHome,
-            this.contactLinkAbout, this.contactLinkWork, this.contactLink
+            this.contactLinkAbout, this.contactLinkWork, this.contactLinkVideo, this.contactLink
         )
     }
 
@@ -59,7 +63,8 @@ export default class Contact extends Component {
             txContent: true,
             home: true, 
             about: false,           
-            work: false,            
+            work: false, 
+            video: false           
         })
         //homeEnter(this.home)
         Transition(
@@ -84,7 +89,8 @@ export default class Contact extends Component {
             txContent: true,
             home: false, 
             about: true,           
-            work: false,            
+            work: false,
+            video: false            
         })
         Transition(
             this.transitionFirst, this.transitionMain, 
@@ -108,8 +114,9 @@ export default class Contact extends Component {
             transition: true,
             txContent: true,
             home: false, 
-            about: false,           
-            work: true,            
+            about: false,
+            work: true,           
+            video: false,            
         })
         Transition(
             this.transitionFirst, this.transitionMain, 
@@ -128,13 +135,40 @@ export default class Contact extends Component {
             this.setState({transition: false})
         }, 3300)
     }
+    async videoTransition() {
+        await this.setState({
+            transition: true,
+            txContent: true,
+            home: false, 
+            about: false,
+            work: false,
+            video: true,            
+        })
+        Transition(
+            this.transitionFirst, this.transitionMain, 
+            this.transitionSecond,this.FnameTx,this.LnameTx, 
+            this.state.width, this.learnTx
+        )
+        videoEnter(this.videoHome)
+
+        setTimeout(() => {
+            this.setState({contact: false})
+        }, 2000)
+        setTimeout(() => {
+            this.setState({txContent: false})
+        }, 3000)
+        setTimeout(() => {
+            this.setState({transition: false})
+        }, 3300)
+    }
        
 
 
 	render() {	
         const home = home => this.home = home
         const aboutHome = aboutHome => this.aboutHome = aboutHome
-        const workHome = workHome => this.workHome = workHome	
+        const workHome = workHome => this.workHome = workHome
+        const videoHome = videoHome => this.videoHome = videoHome	
 
         const contactLeftCol = contactLeftCol => this.contactLeftCol = contactLeftCol
         const contactRightColContent = contactRightColContent => this.contactRightColContent = contactRightColContent 
@@ -143,6 +177,7 @@ export default class Contact extends Component {
         const contactLinkHome = contactLinkHome => this.contactLinkHome = contactLinkHome
         const contactLinkAbout = contactLinkAbout => this.contactLinkAbout = contactLinkAbout
         const contactLinkWork = contactLinkWork => this.contactLinkWork = contactLinkWork
+        const contactLinkVideo = contactLinkVideo => this.contactLinkVideo = contactLinkVideo
         const contactLink = contactLink => this.contactLink = contactLink
 
         const transitionFirst  = transitionFirst  => this.transitionFirst  = transitionFirst
@@ -188,6 +223,14 @@ export default class Contact extends Component {
                                             onMouseEnter={() => this.setState({workHover: !this.state.workHover})}
                                             onMouseLeave={() => this.setState({workHover: !this.state.workHover})}>
                                             Work
+                                        </p>
+                                        <p 
+                                            className={this.state.videoHover||this.state.video?"contactLinkHover":"contactLink"}
+                                            ref={contactLinkVideo}             
+                                            onClick={this.videoTransition}                            
+                                            onMouseEnter={() => this.setState({videoHover: !this.state.videoHover})}
+                                            onMouseLeave={() => this.setState({videoHover: !this.state.videoHover})}>
+                                            Video
                                         </p>
                                         <p 
                                             className={this.state.contactHover||this.state.contact?"contactLinkHover":"contactLink"} 
@@ -264,6 +307,12 @@ export default class Contact extends Component {
                 {this.state.work?   
                     <div ref={workHome} className="workHome">                 
                         <Work />
+                    </div>
+                :null}
+
+                {this.state.video?   
+                    <div ref={videoHome} className="videoHome">                 
+                        <Video />
                     </div>
                 :null}
             </div>

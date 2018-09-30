@@ -17,7 +17,7 @@ export const contactEnter = (contactHome) => {
 
 }
 
-export const contactColumns = (contactLeftCol,contactRightColContent,width,contactStill,contactLinkhome,contactLinkAbout,contactLinkWork,contactLink) => {
+export const contactColumns = (contactLeftCol,contactRightColContent,width,contactStill,contactLinkhome,contactLinkAbout,contactLinkWork,contactLinkVideo,contactLink) => {
 	
 
   	var tl = new TimelineMax();
@@ -40,7 +40,7 @@ export const contactColumns = (contactLeftCol,contactRightColContent,width,conta
     	ease: Power2.easeOut
     }, "start+=.5")
 
-    .staggerFrom([contactLinkhome,contactLinkAbout,contactLinkWork,contactLink], 2.5, {
+    .staggerFrom([contactLinkhome,contactLinkAbout,contactLinkWork,contactLinkVideo,contactLink], 2.5, {
     	y:50, opacity:0, ease:  Elastic.easeOut.config(1.2, 1)
     }, 0.3, "start+=.7")
 }

@@ -13,11 +13,13 @@ import './Styles/VideoMobile.css'
 import {videoColumns} from '../../Animation/Video'
 import {aboutEnter} from '../../Animation/About'
 import {workEnter} from '../../Animation/Work'
+import {contactEnter} from '../../Animation/Contact'
 import {Transition} from '../../Animation/Transition'
 
 import Landing from '../Landing/Landing'
 import About from '../About/About'
 import Work from '../Work/Work'
+import Contact from '../Contact/Contact'
 
 import {TweenMax, Power2, TimelineLite, Elastic, Circ, Back, Power4, TimelineMax} from "gsap/TweenMax";
 import scrollToComponent from 'react-scroll-to-component';
@@ -51,7 +53,7 @@ export default class Video extends Component {
         videoColumns(
             this.videoLeftCol, this.videoRightColContent, 
             this.state.width, this.videoStill, this.videoLinkHome,
-            this.videoLinkAbout, this.videoLinkWork, this.videoLink
+            this.videoLinkAbout, this.videoLinkWork, this.videoLink, this.videoLinkContact
         )
     }
 
@@ -147,7 +149,7 @@ export default class Video extends Component {
             this.transitionSecond,this.FnameTx,this.LnameTx, 
             this.state.width, this.learnTx
         )
-        workEnter(this.workHome)
+        contactEnter(this.contactHome)
 
         setTimeout(() => {
             this.setState({video: false})
@@ -165,7 +167,8 @@ export default class Video extends Component {
 	render() {	
         const home = home => this.home = home
         const aboutHome = aboutHome => this.aboutHome = aboutHome
-        const workHome = workHome => this.workHome = workHome	
+        const workHome = workHome => this.workHome = workHome
+        const contactHome = contactHome => this.contactHome = contactHome	
 
         const videoLeftCol = videoLeftCol => this.videoLeftCol = videoLeftCol
         const videoRightColContent = videoRightColContent => this.videoRightColContent = videoRightColContent 
@@ -174,6 +177,7 @@ export default class Video extends Component {
         const videoLinkHome = videoLinkHome => this.videoLinkHome = videoLinkHome
         const videoLinkAbout = videoLinkAbout => this.videoLinkAbout = videoLinkAbout
         const videoLinkWork = videoLinkWork => this.videoLinkWork = videoLinkWork
+        const videoLinkContact = videoLinkContact => this.videoLinkContact = videoLinkContact
         const videoLink = videoLink => this.videoLink = videoLink
 
         const transitionFirst  = transitionFirst  => this.transitionFirst  = transitionFirst
@@ -192,7 +196,7 @@ export default class Video extends Component {
 
                         <div ref={videoLeftCol} className="videoLeftCol">
                             <div className="videoWhite">
-                                <h2 ref={videoStill}>video</h2>                                
+                                <h2 ref={videoStill}>VIDEO</h2>                                
                                 
                                 <div className="videoLinks">
                                     <div className="video-link-content">
@@ -225,7 +229,15 @@ export default class Video extends Component {
                                             ref={videoLink}                                     
                                             onMouseEnter={() => this.setState({videoHover: !this.state.videoHover})}
                                             onMouseLeave={() => this.setState({videoHover: !this.state.videoHover})}>
-                                            video
+                                            Video
+                                        </p>
+                                        <p 
+                                            className={this.state.contactHover||this.state.contact?"workLinkHover":"workLink"} 
+                                            ref={videoLinkContact} 
+                                            onClick={this.contactTransition}
+                                            onMouseEnter={() => this.setState({contactHover: !this.state.contactHover})}
+                                            onMouseLeave={() => this.setState({contactHover: !this.state.contactHover})}>
+                                            Contact
                                         </p>
                                     </div>
                                 </div>
@@ -295,6 +307,12 @@ export default class Video extends Component {
                 {this.state.work?   
                     <div ref={workHome} className="workHome">                 
                         <Work />
+                    </div>
+                :null}
+
+                {this.state.contact?   
+                    <div ref={contactHome} className="contactHome">                 
+                        <Contact />
                     </div>
                 :null}
             </div>

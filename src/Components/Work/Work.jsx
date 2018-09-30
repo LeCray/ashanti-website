@@ -13,6 +13,7 @@ import './Styles/WorkMobile.css'
 import {workColumns,drop,switchTo} from '../../Animation/Work'
 import {aboutEnter} from '../../Animation/About'
 import {contactEnter} from '../../Animation/Contact'
+import {videoEnter} from '../../Animation/Video'
 import {Transition} from '../../Animation/Transition'
 
 
@@ -22,6 +23,7 @@ import scrollToComponent from 'react-scroll-to-component';
 import Landing from '../Landing/Landing'
 import About from '../About/About'
 import Contact from '../Contact/Contact'
+import Video from '../Video/Video'
 
 
 import {PSWP} from './Content/PSWP'
@@ -38,6 +40,7 @@ export default class Work extends Component {
             home: false,
             about: false,
             work: true,
+            video: false,
             contact: false,
             columns: false,
             DataAnalytics: true,            
@@ -54,6 +57,7 @@ export default class Work extends Component {
 
         this.homeTransition = this.homeTransition.bind(this);
         this.aboutTransition = this.aboutTransition.bind(this);  
+        this.videoTransition = this.videoTransition.bind(this);
         this.contactTransition = this.contactTransition.bind(this);
 
         
@@ -64,7 +68,7 @@ export default class Work extends Component {
         workColumns(
             this.workLeftCol, this.workRightColContent, 
             this.state.width, this.workStill, this.workLinkHome,
-            this.workLinkAbout, this.workLink, this.workLinkContact,
+            this.workLinkAbout, this.workLink, this.workLinkVideo, this.workLinkContact,
             this.pswpSlide, this.publishedWorkSlide, this.DataAnalyticsSlide
         )
     }
@@ -153,6 +157,32 @@ export default class Work extends Component {
             this.setState({transition: false})
         }, 3300)
     }
+    async videoTransition() {
+        await this.setState({
+            transition: true,
+            txContent: true,
+            home: false, 
+            about: false,
+            video: true,
+            contact: false
+        })
+        Transition(
+            this.transitionFirst, this.transitionMain, 
+            this.transitionSecond,this.FnameTx,this.LnameTx, 
+            this.state.width, this.learnTx
+        )
+        videoEnter(this.videoHome)
+
+        setTimeout(() => {
+            this.setState({work: false})
+        }, 2000)
+        setTimeout(() => {
+            this.setState({txContent: false})
+        }, 3000)
+        setTimeout(() => {
+            this.setState({transition: false})
+        }, 3300)
+    }
     async contactTransition() {
         await this.setState({
             transition: true,
@@ -182,7 +212,8 @@ export default class Work extends Component {
 	render() {		
         const home = home => this.home = home
         const aboutHome = aboutHome => this.aboutHome = aboutHome
-        const contactHome = contactHome => this.contactHome = contactHome  
+        const contactHome = contactHome => this.contactHome = contactHome
+        const videoHome = videoHome => this.videoHome = videoHome  
         
         const workLeftCol = workLeftCol => this.workLeftCol = workLeftCol
         const workRightColContent = workRightColContent => this.workRightColContent = workRightColContent 
@@ -192,6 +223,7 @@ export default class Work extends Component {
         const workLink = workLink => this.workLink = workLink
         const workLinkAbout = workLinkAbout => this.workLinkAbout = workLinkAbout
         const workLinkContact = workLinkContact => this.workLinkContact = workLinkContact
+        const workLinkVideo = workLinkVideo => this.workLinkVideo = workLinkVideo
 
         const transitionFirst  = transitionFirst  => this.transitionFirst  = transitionFirst
         const transitionMain  = transitionMain  => this.transitionMain  = transitionMain
@@ -272,6 +304,14 @@ export default class Work extends Component {
                                         Work
                                     </p>
                                     <p 
+                                        className={this.state.videoHover||this.state.video?"videoLinkHover":"videoLink"} 
+                                        ref={workLinkVideo}
+                                        onClick={this.videoTransition}
+                                        onMouseEnter={() => this.setState({videoHover: !this.state.videoHover})}
+                                        onMouseLeave={() => this.setState({videoHover: !this.state.videoHover})}>
+                                        Video
+                                    </p>
+                                    <p 
                                         className={this.state.contactHover||this.state.contact?"workLinkHover":"workLink"} 
                                         ref={workLinkContact} 
                                         onClick={this.contactTransition}
@@ -339,6 +379,12 @@ export default class Work extends Component {
                 {this.state.about?   
                     <div ref={aboutHome} className="aboutHome">                 
                         <About />
+                    </div>
+                :null}
+
+                {this.state.video?   
+                    <div ref={videoHome} className="videoHome">                 
+                        <Video />
                     </div>
                 :null}
                 

@@ -15,7 +15,7 @@ export const workEnter = (workHome) => {
     }, "start")    
 }
 
-export const workColumns = (workLeftCol,workRightColContent,width,workStill,workLinkhome,workLinkAbout,workLink,workLinkContact,pswpSlide,publishedWorkSlide, DataAnalyticsSlide) => {
+export const workColumns = (workLeftCol,workRightColContent,width,workStill,workLinkhome,workLinkAbout,workLink,workLinkVideo,workLinkContact,pswpSlide,publishedWorkSlide, DataAnalyticsSlide) => {
 	
   	var tl = new TimelineMax();
 
@@ -38,7 +38,7 @@ export const workColumns = (workLeftCol,workRightColContent,width,workStill,work
     	ease: Power2.easeOut
     }, "start+=.5")
 
-    .staggerFrom([workLinkhome,workLinkAbout,workLink,workLinkContact], 2.5, {
+    .staggerFrom([workLinkhome,workLinkAbout,workLink,workLinkVideo,workLinkContact], 2.5, {
     	y:50, opacity:0, ease:  Elastic.easeOut.config(1.2, 1)
     }, 0.3, "start+=.7")
     
