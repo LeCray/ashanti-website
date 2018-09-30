@@ -297,9 +297,9 @@ export default class Landing extends Component {
                         </div>
                         <div ref={transitionMain} className="transition-main">
                             <div className="transition-content" style={{display: this.state.txContent?null:"none"}}>
-                                <p ref={FnameTx} className="name-tx">J</p>
-                                <p ref={LnameTx} className="name-tx" style={{marginLeft: 5}}>K</p>
-                                <p ref={learnTx} className="learn-tx">- LIVING TO LEARN -</p>
+                                <p ref={FnameTx} className="name-tx">ASHANTI</p>
+                                <p ref={LnameTx} className="name-tx" style={{marginLeft: 5}}></p>
+                                <p ref={learnTx} className="learn-tx">- AFRICAN -</p>
                             </div>
                         </div>
                         <div 

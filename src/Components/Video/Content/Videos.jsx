@@ -87,6 +87,9 @@ export default class Videos extends Component {
                   height='100%'
                 />  
             </div>
+            
+            <hr/>
+            <h4>Instagram is my photo journal, follow me to see my pictures: @shanti_k</h4>
         </div>
     )}
 }
