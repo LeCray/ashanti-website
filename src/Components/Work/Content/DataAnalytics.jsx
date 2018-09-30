@@ -28,11 +28,11 @@ export class DataAnalytics extends Component {
     render() {
     return (
         <div >
-            <h2 ref={(section)=>{this.DataAnalyticsSlide = section;}} className="heading" style={{color: "#737373"}}>Brands Eye</h2>
+            <h2 ref={(section)=>{this.DataAnalyticsSlide = section;}} className="heading" style={{color: "#737373"}}>Data Analytics</h2>
             <h4>Opinion Mining</h4>
 
             <div className="brands-eye-logo-container">
-              <img className="brands-eye-logo" src={require("../../../Assets/Images/work/brands-eye.png")}/>
+              <a href="https://www.brandseye.com/" target="_blank"><img className="brands-eye-logo" src={require("../../../Assets/Images/work/brands-eye.png")}/></a>
             </div>
 
             <p  className="data-analytics-content">

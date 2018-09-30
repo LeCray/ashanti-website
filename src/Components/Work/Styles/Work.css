@@ -47,10 +47,26 @@
 	display: inline-block;
 	cursor: pointer;		
 	border-bottom: 3px solid white;
+
+}
+
+.workLink {
+	margin-left: 20px;
+	display: inline-block;
+	cursor: pointer;
+	
+}
+.workLinkHover {
+	margin-left: 20px;
+	display: inline-block;
+	cursor: pointer;		
+	
+		
 }
 
 
 .work-intra-links {	
+	margin-top: 20px;
 	display: inline-block;		
 }
 

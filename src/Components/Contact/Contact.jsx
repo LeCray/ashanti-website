@@ -258,10 +258,12 @@ export default class Contact extends Component {
 
                                 <Row>
                                     <Col className="contact-container" lg={6}>
-                                        <h5 className="contact-details">Email:</h5>                                        
+                                        <h5 className="contact-details">Email:</h5>
+                                        <h5 className="contact-details">Instagram:</h5>                                        
                                     </Col>
                                     <Col className="contact-container-2" lg={6}>
                                         <h5 className="contact-details-2">ashantikunene123@gmail.com</h5>
+                                        <h5 className="contact-details-2"><a href="https://www.instagram.com/shanti_k/?hl=en" target="_blank">@shanti_k</a></h5>
                                     </Col>
                                 </Row>
                                 <img className="me-contact" src={require("../../Assets/Images/shanti-grad.jpg")}/>

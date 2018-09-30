@@ -250,7 +250,7 @@ export default class Work extends Component {
                                 
                                 <div className="work-intra-links">
                                     <p 
-                                        className={this.state.DataAnalyticsHover||this.state.DataAnalytics?"workLinkHover":"workLink"}
+                                        className="workLink"
                                         ref={DataAnalyticsSlide} 
                                         style={{marginLeft: 0}} 
                                         onMouseEnter={() => this.setState({DataAnalyticsHover: !this.state.DataAnalyticsHover})}
@@ -259,7 +259,7 @@ export default class Work extends Component {
                                         Data Analytics
                                     </p><br/>
                                     <p 
-                                        className={this.state.pswpHover||this.state.pswp?"workLinkHover":"workLink"}
+                                        className="workLink"
                                         ref={pswpSlide}
                                         onMouseEnter={() => this.setState({pswpHover: !this.state.pswpHover})}
                                         onMouseLeave={() => this.setState({pswpHover: !this.state.pswpHover})} 
@@ -267,7 +267,7 @@ export default class Work extends Component {
                                         Public Speaking, Writing & Poetry
                                     </p><br/>
                                     <p 
-                                        className={this.state.publishedWorkHover||this.state.publishedWork?"workLinkHover":"workLink"}
+                                        className="workLink"
                                         ref={publishedWorkSlide}
                                         onMouseEnter={() => this.setState({publishedWorkHover: !this.state.publishedWorkHover})}
                                         onMouseLeave={() => this.setState({publishedWorkHover: !this.state.publishedWorkHover})} 

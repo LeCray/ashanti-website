@@ -50,7 +50,7 @@ export class PublishedWork extends Component {
                   <li><a href="http://www.huffingtonpost.co.za/ashanti-kunene/the-rainbow-nation-made-us-believe-that-even-within-our-differenceswe-are-equal-but-we-are-not_a_23079188/" target="_blank">The Rainbow Nation Made Us Believe That Even Within Our Differenceswe Are Equal But We Are Not</a></li>
                   <li><a href="http://www.huffingtonpost.co.za/ashanti-kunene/gender-based-violence-is-a-ticking-time-bomb_a_23201453/" target="_blank">Gender Based Violence is a Ticking Time Bomb</a></li>
                   <li><a href="http://www.huffingtonpost.co.za/ashanti-kunene/we-cannot-afford-to-have-leaders-that-do-not-read_a_23229279/" target="_blank">We Cannot Afford To Have Leaders That Do Not Read</a></li>
-                  <li><a href="https://www.gate5.co.za/read/83459/qv/53139607/14839133/92846/p" target="_blank">Cape Talk Radio Interview on Op-Ed: </a></li>
+                  <li><a href="https://www.gate5.co.za/read/83459/qv/53139607/14839133/92846/p" target="_blank">Cape Talk Radio Interview on Op-Ed</a></li>
                 </ul>
                 {/*<img className="money-calls-img" src={require("../../../Assets/Images/work/money-calls.png")}/>*/}
             </p>            
