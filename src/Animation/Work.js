@@ -15,7 +15,7 @@ export const workEnter = (workHome) => {
     }, "start")    
 }
 
-export const workColumns = (workLeftCol,workRightColContent,width,workStill,workLinkhome,workLinkAbout,workLink,workLinkContact, madMobile,parkupp,moneyCalls) => {
+export const workColumns = (workLeftCol,workRightColContent,width,workStill,workLinkhome,workLinkAbout,workLink,workLinkContact,parkupp,moneyCalls, DataAnalyticsSlide) => {
 	
   	var tl = new TimelineMax();
 
@@ -42,7 +42,7 @@ export const workColumns = (workLeftCol,workRightColContent,width,workStill,work
     	y:50, opacity:0, ease:  Elastic.easeOut.config(1.2, 1)
     }, 0.3, "start+=.7")
     
-    .staggerFrom([madMobile,parkupp,moneyCalls], 2.5, {
+    .staggerFrom([DataAnalyticsSlide,parkupp,moneyCalls], 2.5, {
         x:-50,y:10, opacity:0, ease: Elastic.easeOut.config(1.2, 1)
     }, .2, "start+=1")
     

@@ -21,7 +21,7 @@ import Contact from '../Contact/Contact'
 import {MadMobile} from './Content/MadMobile'
 import {Parkupp} from './Content/Parkupp'
 import {MoneyCalls} from './Content/MoneyCalls'
-import {GalxyBit} from './Content/GalxyBit'
+import {DataAnalytics} from './Content/DataAnalytics'
 
 
 
@@ -38,13 +38,13 @@ export default class WorkMobile extends Component {
             madMobile:true,
             parkupp: false,
             moneyCalls: false,
-            galxyBit: false,            
+            DataAnalytics: false,            
         };
 
         this.madMobile = this.madMobile.bind(this);
         this.parkupp = this.parkupp.bind(this);
         this.moneyCalls = this.moneyCalls.bind(this);
-        this.galxyBit = this.galxyBit.bind(this);
+        this.DataAnalytics = this.DataAnalytics.bind(this);
 
         this.homeTransition = this.homeTransition.bind(this);
         this.aboutTransition = this.aboutTransition.bind(this);  
@@ -56,7 +56,7 @@ export default class WorkMobile extends Component {
             madMobile:true,
             parkupp: false,
             moneyCalls: false,
-            galxyBit: false,
+            DataAnalytics: false,
         })
     }
     parkupp() {
@@ -64,7 +64,7 @@ export default class WorkMobile extends Component {
             parkupp: true,
             madMobile:false,
             moneyCalls: false,
-            galxyBit: false,
+            DataAnalytics: false,
         })
     }
     moneyCalls() {
@@ -72,12 +72,12 @@ export default class WorkMobile extends Component {
             moneyCalls: true,
             parkupp: false,
             madMobile:false,
-            galxyBit: false,
+            DataAnalytics: false,
         })
     }
-    galxyBit() {
+    DataAnalytics() {
         this.setState({
-            galxyBit: true,
+            DataAnalytics: true,
             moneyCalls: false,
             parkupp: false,
             madMobile:false,
@@ -131,7 +131,7 @@ export default class WorkMobile extends Component {
                                 <p className="work-link" style={{marginLeft: 0}} onClick={()=>scrollToComponent(this.mad,{offset:-45,align:'top',ease:'inOutCirc',duration:1500})}>MAD Mobile</p>
                                 <p className="work-link" onClick={()=>scrollToComponent(this.parkupp,{offset:-45,align:'top',ease:'inOutCirc',duration:1500})}>ParkUpp</p>
                                 <p className="work-link" onClick={()=>scrollToComponent(this.moneycalls,{offset:-45,align:'top',ease:'inOutCirc',duration:1500})}>Money Calls</p>
-                                <p className="work-link" onClick={()=>scrollToComponent(this.galxybit,{offset:-45,align:'top',ease:'inOutCirc',duration:1500})}>GalxyBit</p>
+                                <p className="work-link" onClick={()=>scrollToComponent(this.DataAnalytics,{offset:-45,align:'top',ease:'inOutCirc',duration:1500})}>DataAnalytics</p>
                             </div>                           
                         </div>
                     </div>
@@ -151,8 +151,8 @@ export default class WorkMobile extends Component {
                                 <MoneyCalls />
                             </div>
                             <hr className="work-hr"/>
-                            <div ref={(section)=>{this.galxybit = section;}} className="work-content-mobile">
-                                <GalxyBit />
+                            <div ref={(section)=>{this.DataAnalytics = section;}} className="work-content-mobile">
+                                <DataAnalytics />
                             </div>
                           
                         </div>

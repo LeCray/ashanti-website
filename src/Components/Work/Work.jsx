@@ -26,7 +26,7 @@ import Contact from '../Contact/Contact'
 import {MadMobile} from './Content/MadMobile'
 import {Parkupp} from './Content/Parkupp'
 import {MoneyCalls} from './Content/MoneyCalls'
-import {GalxyBit} from './Content/GalxyBit'
+import {DataAnalytics} from './Content/DataAnalytics'
 
 
 
@@ -40,19 +40,17 @@ export default class Work extends Component {
             work: true,
             contact: false,
             columns: false,
-            madMobile:true,
+            DataAnalytics: true,            
             parkupp: false,
             moneyCalls: false,
-            galxyBit: false,
             transition: false, 
             txContent: false,                                 
             width: window.innerWidth          
         };
-
-        this.madMobile = this.madMobile.bind(this);
+        
         this.parkupp = this.parkupp.bind(this);
         this.moneyCalls = this.moneyCalls.bind(this);
-        this.galxyBit = this.galxyBit.bind(this);
+        this.DataAnalytics = this.DataAnalytics.bind(this);
 
         this.homeTransition = this.homeTransition.bind(this);
         this.aboutTransition = this.aboutTransition.bind(this);  
@@ -67,24 +65,10 @@ export default class Work extends Component {
             this.workLeftCol, this.workRightColContent, 
             this.state.width, this.workStill, this.workLinkHome,
             this.workLinkAbout, this.workLink, this.workLinkContact,
-            this.madMobileSlide, this.parkuppSlide, this.moneyCallsSlide, this.galxyBitSlide
+            this.parkuppSlide, this.moneyCallsSlide, this.DataAnalyticsSlide
         )
     }
 
-    madMobile() {                    
-        switchTo(this.workRightColContent)
-
-        setTimeout(() => {
-            this.setState({
-                madMobile:true,
-                parkupp: false,
-                moneyCalls: false,
-                galxyBit: false,
-            })
-        }, 500)        
-        
-        
-    }
     parkupp() {
         switchTo(this.workRightColContent)    
         setTimeout(() => {
@@ -92,7 +76,7 @@ export default class Work extends Component {
                 parkupp: true,
                 madMobile:false,
                 moneyCalls: false,
-                galxyBit: false,
+                DataAnalytics: false,
             })                
         }, 500)        
     }
@@ -103,15 +87,15 @@ export default class Work extends Component {
                 moneyCalls: true,
                 parkupp: false,
                 madMobile:false,
-                galxyBit: false,
+                DataAnalytics: false,
             })
         }, 500)        
     }
-    galxyBit() {
+    DataAnalytics() {
         switchTo(this.workRightColContent)
         setTimeout(() => {
             this.setState({
-                galxyBit: true,
+                DataAnalytics: true,
                 moneyCalls: false,
                 parkupp: false,
                 madMobile:false,
@@ -215,11 +199,10 @@ export default class Work extends Component {
         const FnameTx = FnameTx => this.FnameTx = FnameTx
         const LnameTx = LnameTx => this.LnameTx = LnameTx
         const learnTx = learnTx => this.learnTx = learnTx
-        
-        const madMobileSlide  = madMobileSlide  => this.madMobileSlide  = madMobileSlide
+                
         const parkuppSlide = parkuppSlide => this.parkuppSlide = parkuppSlide
         const moneyCallsSlide = moneyCallsSlide => this.moneyCallsSlide = moneyCallsSlide
-        const galxyBitSlide = galxyBitSlide => this.galxyBitSlide = galxyBitSlide
+        const DataAnalyticsSlide = DataAnalyticsSlide => this.DataAnalyticsSlide = DataAnalyticsSlide
     
 		return(
             <div>
@@ -235,12 +218,12 @@ export default class Work extends Component {
                                 
                                 <div className="work-intra-links">
                                     <p 
-                                        className={this.state.madMobileHover||this.state.madMobile?"workLinkHover":"workLink"}
-                                        ref={madMobileSlide} 
+                                        className={this.state.DataAnalyticsHover||this.state.DataAnalytics?"workLinkHover":"workLink"}
+                                        ref={DataAnalyticsSlide} 
                                         style={{marginLeft: 0}} 
-                                        onMouseEnter={() => this.setState({madMobileHover: !this.state.madMobileHover})}
-                                        onMouseLeave={() => this.setState({madMobileHover: !this.state.madMobileHover})} 
-                                        onClick={this.madMobile}>
+                                        onMouseEnter={() => this.setState({DataAnalyticsHover: !this.state.DataAnalyticsHover})}
+                                        onMouseLeave={() => this.setState({DataAnalyticsHover: !this.state.DataAnalyticsHover})} 
+                                        onClick={this.DataAnalytics}>
                                         Data Analytics
                                     </p><br/>
                                     <p 
@@ -306,12 +289,7 @@ export default class Work extends Component {
                             ref={workRightColContent} 
                             className="workRightColContent" 
                             style={{"-webkit-overflow-scrolling": "touch", display: this.state.columns?null:"none"}}>
-                            
-                            <div className="scroller" style={{display: this.state.madMobile?null:"none"}}>
-                                <div>
-                                    <MadMobile />
-                                </div>
-                            </div>
+                                                       
                             <div className="scroller" style={{display: this.state.parkupp?null:"none"}}>
                                 <div>
                                     <Parkupp />
@@ -322,9 +300,9 @@ export default class Work extends Component {
                                     <MoneyCalls />
                                 </div>
                             </div>
-                            <div className="scroller" style={{display: this.state.galxyBit?null:"none"}}>
+                            <div className="scroller" style={{display: this.state.DataAnalytics?null:"none"}}>
                                 <div>
-                                    <GalxyBit />
+                                    <DataAnalytics />
                                 </div>
                             </div>                          
                         </div>
