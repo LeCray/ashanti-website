@@ -30,8 +30,8 @@ export class PSWP extends Component {
         <div>
             <h2 className="heading" style={{color: "#737373"}}>Public Speaking, Writing & Poetry</h2>            
             
-            <div className="parkupp-logo-container">
-              {/*<img className="parkupp-logo" src={require("../../../Assets/Images/work/parkupp_logo.png")}/>*/}
+            <div className="pswp-logo-container">
+              <img className="pswp-logo" src={require("../../../Assets/Images/pswp/shanti.jpg")}/>
             </div>
 
             <p className="parkupp-content">
@@ -39,18 +39,27 @@ export class PSWP extends Component {
                 which is a legacy of my involvement 
                 in the 2015/2016 #FeesMustFall protests at Stellenbosch University as head girl (Prim) of Metanoia Residence. 
                 I sit on panel discussions and facilitate difficult, open, flat structured dialogues. 
+
+                <div className="pswp-logo-container">
+                  <img className="pswp-logo" src={require("../../../Assets/Images/pswp/shanti2.jpg")}/>
+                </div>
+
                 My writing comes from the need for black African women to write and preserve their own herstories and ensure that the narratives of 
                 black African woman are authentic, real and entirely their own. 
                 My participation as a contributing author to the Nasty Women Talk Back book project is a key example of this.
-                For more information on the NWTB project, go here.
-                I write and perform protest poetry in my spare time.
+                <br/><br/> 
+                For more information on the NWTB project, go <a href="https://www.nastywomen.org.za/nasty-women-talk-back-launches/" target="_blank">here</a>.
                 <br/><br/>
-                For booking inquiries please go to contact page.
-            </p>  
+                I write and perform protest poetry in my spare time.
+                
 
-            <a href="https://parkupp.co.za" target="_blank">
-              {/*<img className="parkupp-img" src={require("../../../Assets/Images/work/parkupp.png")}/>*/}
-            </a>
+                <div className="pswp-logo-container">
+                  <img className="pswp-logo" src={require("../../../Assets/Images/pswp/shanti3.jpg")}/>
+                </div>
+
+                For booking inquiries please go to Contact page.
+            </p>  
+       
         </div>
     )}
 }

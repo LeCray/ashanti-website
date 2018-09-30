@@ -259,13 +259,15 @@ export default class About extends Component {
 
                                 <br/><br/>
                                 
-                                <h5 className="heading">Education</h5>
+                                <h4 className="heading">Education</h4>
+                                <hr/>
                                 <p>
-                                    Epworth Independent School for Girls, 2007 (include link to Epworth website found here)<br/><br/>                                    
-                                    Stellenbosch University, BA International Studies, 2015 (view certificate here)<br/><br/>
-                                    Stellenbosch University, BA Honors International Studies Cum Laude, 2016 (view certificate here)<br/><br/>
-                                    Bologna University, Global Studies and Critical Theory Summer School, June - July 2016 (view certificate here) Read about my experience here<br/><br/>
-                                    Golden Key International Honour Society (view certificate here)
+                                    Epworth Independent School for Girls, 2007<br/><br/>                                    
+                                    Stellenbosch University, BA International Studies, 2015<br/><br/>
+                                    Stellenbosch University, BA Honors International Studies Cum Laude, 2016<br/><br/>
+                                    Bologna University, Global Studies and Critical Theory Summer School, June - July 2016.<br/> 
+                                    Read about my experience <a href="http://blogs.sun.ac.za/summerschoolsblog/2016/07/23/ashanti-at-the-university-of-bologna/" target="_blank">here</a><br/><br/>
+                                    Golden Key International Honour Society
                                                                         
                                 </p>                                                                                                                            
                             </div>
